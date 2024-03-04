@@ -1,0 +1,247 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:  Tahoma, Arial;
+    text-transform: capitalize;
+}
+.container{
+    margin: 20px 200px;
+    height: 1000px;
+
+}
+hr{
+    border-color: ghostwhite;
+}
+.gameinfo{
+    display: flex;
+    /* justify-content: space-between; */
+    align-self: center;
+    margin-bottom: 20px;
+}
+.namegame{
+    flex: 1;
+}
+.category{
+    /* flex: 1; */
+}
+.category span{
+    color:#e91e63fc;
+    font-weight: bold;
+    text-transform: lowercase;
+    font-size: 24px;
+
+}
+.hang{
+    display: flex;
+}
+.hangmanshape{
+    background-color: #f6f6f6;
+    height: 400px;
+    padding: 10px 0;
+    flex: 1;
+    text-align: center;
+}
+.lettersection{
+    flex: 1;
+    margin-left: 10px;
+    text-align: center;
+}
+.shape{
+    display: flex;
+    justify-content: center;
+    top: 50px;
+    position: relative;}
+.coulmn{
+    width: 4px;
+    height: 300px;
+    background: #222;
+    display: none;
+}
+.robe{
+    width: 119px;
+    height: 4px;
+    position: absolute;
+    background-color: #222;
+    top: 20px;
+    left: 50%;
+    display: none;
+}
+.robe::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    top: 0;
+    background-color: #222;
+    right: 0;
+}
+/* .robe::after{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 29px;
+    right: -40px;
+    border-radius: 50%;
+    border: 4px #222 dashed;    
+} */
+.circle{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    right: 54px;
+    border-radius: 50%;
+    border: 4px #222 dashed;
+    display: none;
+}
+.base{
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: #222;
+    top: 300px;
+}
+.man{
+    position: absolute;
+}
+.face{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 60px;
+    border-radius: 50%;
+    border: 4px solid #222;
+    left: 86px;
+    display: none;
+}
+.body{
+    position: absolute;
+    right: -120px;
+    top: 120px;
+    width: 4px;
+    height: 110px;
+    background-color: #222;
+    display: none;
+}
+.hands{
+    position: absolute;
+    display: none;
+}
+.hands::before{
+    content: "";
+    width: 4px;
+    position: absolute;
+    height: 50px;
+    background-color: #222;
+    top: 141px;
+    right: -97px;
+    transform: rotate(-60deg);
+}
+.hands::after{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    top: 140px;
+    right: -143px;
+    background-color: #222;
+    transform: rotate(60deg);
+}
+.legs{
+    position: absolute;
+    display: none;
+}
+.legs::before{
+    content: "";
+    width: 4px;
+    position: absolute;
+    height: 50px;
+    background-color: #222;
+    top: 216px;
+    right: -97px;
+    transform: rotate(60deg);
+}
+.legs::after{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    top: 216px;
+    right: -143px;
+    background-color: #222;
+    transform: rotate(-60deg);
+}
+.coulmn.show-1,
+.robe.show-2,
+.circle.show-3,
+.face.show-4,
+.body.show-5,
+.hands.show-6,
+.legs.show-7{
+    display: block;
+}
+
+
+.allletter{
+    background-color: #047579;
+    width: 50px;
+    font-weight: bold;
+    font-size: 21px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.allletter.clicked{
+    background: #80808082;
+    opacity: .5;
+    cursor: no-drop;
+}
+.guessletter{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    background-color: #f6f6f6;
+    min-height: 200px;
+    align-items: center;
+    gap: 15px;
+}
+.guessletter span{
+    border-bottom: 4px solid;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase;
+    font-weight: bold;
+}
+.guessletter span.space{
+    margin-bottom: 22px;
+    padding: 10px;
+    border-bottom: 4px solid #222;
+    background: none;
+}
+.pobub{
+    width: 80%;
+    height: 300px;
+    background-color: #009688;
+    z-index: 1;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    color: white;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.container.finish{
+    pointer-events: none;
+}
